@@ -20,7 +20,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get("./netlify/functions/", (req, res, _) => {
+app.get("/.netlify/functions/", (req, res, _) => {
   res.send("Auth Service");
   console.log("hello");
 });
@@ -30,8 +30,8 @@ mongoose.connect(
     console.log("connected to mongodb");
   }
 );
-app.use("./netlify/functions/auth", authRoutes);
-app.use("./netlify/functions/profile", profileRoutes);
+app.use("/.netlify/functions/auth", authRoutes);
+app.use("/.netlify/functions/profile", profileRoutes);
 app.listen(8080, () => {
   console.log("Listening to port 8080");
 });
