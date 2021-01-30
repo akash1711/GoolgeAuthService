@@ -20,7 +20,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get("/", (req, res, _) => {
+app.get("./netlify/functions/", (req, res, _) => {
   res.send("Auth Service");
 });
 mongoose.connect(
