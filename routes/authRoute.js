@@ -8,7 +8,7 @@ router.get("/login", (req, res, _) => {
 
 router.get("/logout", (req, res, _) => {
   req.logout();
-  res.redirect("/");
+  res.redirect("/.netlify/functions/app/");
 });
 
 router.get(
