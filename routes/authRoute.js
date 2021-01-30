@@ -24,7 +24,7 @@ router.get(
   passport.authenticate("google"),
   (req, res, _) => {
     // res.send(req.user);
-    res.redirect("/profile");
+    res.redirect("/.netlify/functions/app/profile");
   }
 );
 
