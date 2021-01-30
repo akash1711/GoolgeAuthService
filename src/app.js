@@ -22,6 +22,7 @@ app.use(passport.session());
 
 app.get("./netlify/functions/", (req, res, _) => {
   res.send("Auth Service");
+  console.log("hello");
 });
 mongoose.connect(
   "mongodb+srv://admin1:J8I1Ul8i2pQb27vm@cluster0.wap0k.mongodb.net/test?retryWrites=true&w=majority",
