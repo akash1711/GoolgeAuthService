@@ -19,7 +19,7 @@ passport.use(
       //options for strategy
       clientID: keys.google.clientID,
       clientSecret: keys.google.clientSecret,
-      callbackURL: "/auth/google/redirect",
+      callbackURL: "/.netlify/functions/app/auth/google/redirect",
     },
     (accessToken, refreshToken, profile, done) => {
       //passport call-back function
