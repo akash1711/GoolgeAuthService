@@ -3,6 +3,8 @@ const GoogleStrategy = require("passport-google-oauth20");
 const keys = require("./keys");
 const User = require("../models/User");
 
+const mongoose = require("mongoose");
+
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
@@ -31,7 +33,7 @@ passport.use(
           console.log(currentUser);
           done(null, currentUser);
         } else {
-          console.log(profile)
+          console.log(profile);
           new User({
             username: profile.displayName,
             googleId: profile.id,
@@ -40,6 +42,7 @@ passport.use(
             .then((newUser) => {
               console.log(newUser);
               done(null, newUser);
+              mongoose.connection.close();
             })
             .catch((err) => {
               console.log("not able to create user");
