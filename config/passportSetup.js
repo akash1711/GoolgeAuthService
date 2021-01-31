@@ -31,6 +31,7 @@ passport.use(
           console.log(currentUser);
           done(null, currentUser);
         } else {
+          console.log(profile)
           new User({
             username: profile.displayName,
             googleId: profile.id,
