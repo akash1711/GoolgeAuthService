@@ -42,7 +42,7 @@ passport.use(
             .then((newUser) => {
               console.log(newUser);
               done(null, newUser);
-              mongoose.connection.close();
+              mongoose.disconnect();
             })
             .catch((err) => {
               console.log("not able to create user");
